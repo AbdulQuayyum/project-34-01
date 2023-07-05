@@ -28,7 +28,7 @@ export default function Car({ thirdPerson }) {
         useRef(null),
     );
 
-    // const [wheels, wheelInfos] = useWheels(width, height, front, wheelRadius);
+    const [wheels, wheelInfos] = useWheels(width, height, front, wheelRadius);
 
     const [vehicle, vehicleApi] = useRaycastVehicle(
         () => ({
@@ -39,7 +39,7 @@ export default function Car({ thirdPerson }) {
         useRef(null),
     );
 
-    // useControls(vehicleApi, chassisApi);
+    useControls(vehicleApi, chassisApi);
 
     useFrame((state) => {
         if (!thirdPerson) return;
@@ -71,14 +71,10 @@ export default function Car({ thirdPerson }) {
     }, [result]);
 
     return (
-        // <group ref={vehicle} name="vehicle">
-        //     <group ref={chassisBody} name="chassisBody">
-        //         <primitive object={result} rotation-y={Math.PI} position={[0, -0.09, 0]} />
-        //     </group>
-        // </group>
-        <mesh ref={chassisBody}>
-            <meshBasicMaterial transparent={true} opacity={0.3} />
-            <boxGeometry args={chassisBodyArgs} />
-        </mesh>
+        <group ref={vehicle} name="vehicle">
+            <group ref={chassisBody} name="chassisBody">
+                <primitive object={result} rotation-y={Math.PI} position={[0, -0.09, 0]} />
+            </group>
+        </group>
     )
 }
