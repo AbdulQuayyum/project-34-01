@@ -10,7 +10,7 @@ export default function Car({ thirdPerson }) {
 
     let result = useLoader(
         GLTFLoader,
-        "/src/Assets/Models/car.glb"
+        "/Assets/Models/car.glb"
     ).scene;
 
     const position = [-1.5, 0.5, 3];

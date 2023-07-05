@@ -8,12 +8,12 @@ import { ColliderBox, Ramp } from "./Index"
 export default function Track() {
     const result = useLoader(
         GLTFLoader,
-        "/src/Assets/Models/track.glb"
+        "/Assets/Models/track.glb"
     );
 
     const colorMap = useLoader(
         TextureLoader,
-        "/src/Assets/Textures/track.png"
+        "/Assets/Textures/track.png"
     );
 
     useEffect(() => {

@@ -24,7 +24,7 @@ export default function App() {
     <Suspense fallback={null}>
       <Environment
         background={"both"}
-        files={'/src/Assets/Textures/envmap.hdr'} />
+        files={'/Assets/Textures/envmap.hdr'} />
 
       <PerspectiveCamera makeDefault position={cameraPosition} fov={40} />
       {!thirdPerson && (
