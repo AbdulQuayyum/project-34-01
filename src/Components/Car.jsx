@@ -4,6 +4,8 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { Quaternion, Vector3 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+import { UseControls, UseWheels, WheelDebug } from "./Index"
+
 export default function Car({ thirdPerson }) {
 
     let result = useLoader(
@@ -28,7 +30,7 @@ export default function Car({ thirdPerson }) {
         useRef(null),
     );
 
-    const [wheels, wheelInfos] = useWheels(width, height, front, wheelRadius);
+    const [wheels, wheelInfos] = UseWheels(width, height, front, wheelRadius);
 
     const [vehicle, vehicleApi] = useRaycastVehicle(
         () => ({
@@ -39,7 +41,7 @@ export default function Car({ thirdPerson }) {
         useRef(null),
     );
 
-    useControls(vehicleApi, chassisApi);
+    UseControls(vehicleApi, chassisApi);
 
     useFrame((state) => {
         if (!thirdPerson) return;
@@ -75,6 +77,15 @@ export default function Car({ thirdPerson }) {
             <group ref={chassisBody} name="chassisBody">
                 <primitive object={result} rotation-y={Math.PI} position={[0, -0.09, 0]} />
             </group>
+            {/* <mesh ref={chassisBody}>
+        <meshBasicMaterial transparent={true} opacity={0.3} />
+        <boxGeometry args={chassisBodyArgs} />
+      </mesh> */}
+
+            <WheelDebug wheelRef={wheels[0]} radius={wheelRadius} />
+            <WheelDebug wheelRef={wheels[1]} radius={wheelRadius} />
+            <WheelDebug wheelRef={wheels[2]} radius={wheelRadius} />
+            <WheelDebug wheelRef={wheels[3]} radius={wheelRadius} />
         </group>
     )
 }
