@@ -13,5 +13,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <App />
       </Physics>
     </Canvas>
+    <div className="controls">
+      <p>press "w - To Move Forward"</p>
+      <p>press "a - To Move Left"</p>
+      <p>press "s - To Move Right"</p>
+      <p>press "d - To Move Backward"</p>
+      <p>press k to swap camera</p>
+      <p>press r to reset</p>
+      <p>press arrows for flips</p>
+    </div>
   </React.StrictMode>,
 )

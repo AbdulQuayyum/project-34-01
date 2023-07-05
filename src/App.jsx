@@ -27,13 +27,12 @@ export default function App() {
         files={'/src/Assets/Textures/envmap.hdr'} />
 
       <PerspectiveCamera makeDefault position={cameraPosition} fov={40} />
-      <OrbitControls target={[-2.64, -0.71, 0.03]} />
-      {/* {!thirdPerson && (
-      <OrbitControls target={[-2.64, -0.71, 0.03]} />
-      )} */}
+      {!thirdPerson && (
+        <OrbitControls target={[-2.64, -0.71, 0.03]} />
+      )}
       <Ground />
       <Track />
-      <Car />
+      <Car thirdPerson={thirdPerson} />
     </Suspense>
   )
 }
