@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { Environment, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
-import { Track } from "./Components/Index"
+import { Ground, Track } from "./Components/Index"
 
 export default function App() {
   const [thirdPerson, setThirdPerson] = useState(false);
@@ -31,6 +31,7 @@ export default function App() {
       {/* {!thirdPerson && (
       <OrbitControls target={[-2.64, -0.71, 0.03]} />
       )} */}
+      <Ground />
       <Track />
 
     </Suspense>
