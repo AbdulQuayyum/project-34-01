@@ -1,4 +1,5 @@
+import Car from "./Car";
 import Track from "./Track";
 import Ground from "./Ground";
 
-export { Ground, Track }
+export { Car, Ground, Track }

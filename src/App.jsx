@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import { Environment, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
-import { Ground, Track } from "./Components/Index"
+import { Car, Ground, Track } from "./Components/Index"
 
 export default function App() {
   const [thirdPerson, setThirdPerson] = useState(false);
@@ -33,7 +33,7 @@ export default function App() {
       )} */}
       <Ground />
       <Track />
-
+      <Car />
     </Suspense>
   )
 }
